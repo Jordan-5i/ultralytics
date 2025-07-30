@@ -173,7 +173,7 @@ def classify_transforms(
     else:
         # Resize the shortest edge to matching target dim for non-square target
         tfl = [T.Resize(scale_size)]
-    tfl += [T.CenterCrop(size), T.ToTensor(), T.Normalize(mean=torch.tensor(mean), std=torch.tensor(std))]
+    tfl += [T.CenterCrop(size), T.PILToTensor()]
     return T.Compose(tfl)
 
 
@@ -186,8 +186,8 @@ def preprocess(img):
         img = torch.stack(
             [transforms(Image.fromarray(cv2.cvtColor(im, cv2.COLOR_BGR2RGB))) for im in img], dim=0
         )
-    img = (img if isinstance(img, torch.Tensor) else torch.from_numpy(img))
-    return img.float() 
+    img = (img if isinstance(img, torch.Tensor) else torch.from_numpy(img)) # NCHW
+    return img.permute(0, 2, 3, 1) # NHWC
 
 
 if __name__ == "__main__":

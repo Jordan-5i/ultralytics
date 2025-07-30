@@ -7,7 +7,7 @@
         {
           "tensor_name": "DEFAULT",
           "calibration_dataset": "/data/wangjian/project/pulsar_build_onnx/imagenet-calib.tar",
-          "calibration_size": 1,
+          "calibration_size": -1,
           "calibration_format": "Image",
           "calibration_mean": [0.0, 0.0, 0.0],
           "calibration_std": [255.0, 255.0, 255.0]
@@ -36,8 +36,10 @@
         "tensor_name": "DEFAULT",
         "tensor_format": "RGB",
         "tensor_layout": "NCHW",
+        "src_layout": "NHWC",
+        "src_dtype": "U8",
         "mean": [0, 0, 0],
-        "std": [1, 1, 1]
+        "std": [255.0, 255.0, 255.0]
       }
     ],  
 
