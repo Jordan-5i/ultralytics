@@ -18,7 +18,7 @@ The IMX500 model format is designed to use minimal power while delivering fast p
 
 ## Why Should You Export to IMX500
 
-Sony's [IMX500 Intelligent Vision Sensor](https://developer.aitrios.sony-semicon.com/en/raspberrypi-ai-camera) is a game-changing piece of hardware in edge AI processing. It's the world's first intelligent vision sensor with on-chip AI capabilities. This sensor helps overcome many challenges in edge AI, including data processing bottlenecks, privacy concerns, and performance limitations.  
+Sony's [IMX500 Intelligent Vision Sensor](https://developer.aitrios.sony-semicon.com/en/raspberrypi-ai-camera) is a game-changing piece of hardware in edge AI processing. It's the world's first intelligent vision sensor with on-chip AI capabilities. This sensor helps overcome many challenges in edge AI, including data processing bottlenecks, privacy concerns, and performance limitations.
 While other sensors merely pass along images and frames, the IMX500 tells a whole story. It processes data directly on the sensor, allowing devices to generate insights in real-time.
 
 ## Sony's IMX500 Export for YOLO11 Models
@@ -143,8 +143,8 @@ The export process will create an ONNX model for quantization validation, along 
         ├── labels.txt
         ├── packerOut.zip
         ├── yolo11n_imx.onnx
-        ├── yolo11n_imx500_model_MemoryReport.json
-        └── yolo11n_imx500_model.pbtxt
+        ├── yolo11n_imx_MemoryReport.json
+        └── yolo11n_imx.pbtxt
         ```
 
     === "Pose Estimation"
@@ -155,8 +155,8 @@ The export process will create an ONNX model for quantization validation, along 
         ├── labels.txt
         ├── packerOut.zip
         ├── yolo11n-pose_imx.onnx
-        ├── yolo11n-pose_imx500_model_MemoryReport.json
-        └── yolo11n-pose_imx500_model.pbtxt
+        ├── yolo11n-pose_imx_MemoryReport.json
+        └── yolo11n-pose_imx.pbtxt
         ```
 
 ## Using IMX500 Export in Deployment
@@ -322,7 +322,7 @@ YOLOv8n, YOLO11n, YOLOv8n-pose and YOLO11n-pose benchmarks below were run by the
 
 ### Sony Model Compression Toolkit (MCT)
 
-[Sony's Model Compression Toolkit (MCT)](https://github.com/sony/model_optimization) is a powerful tool for optimizing deep learning models through quantization and pruning. It supports various quantization methods and provides advanced algorithms to reduce model size and computational complexity without significantly sacrificing accuracy. MCT is particularly useful for deploying models on resource-constrained devices, ensuring efficient inference and reduced latency.
+[Sony's Model Compression Toolkit (MCT)](https://github.com/SonySemiconductorSolutions/mct-model-optimization) is a powerful tool for optimizing deep learning models through quantization and pruning. It supports various quantization methods and provides advanced algorithms to reduce model size and computational complexity without significantly sacrificing accuracy. MCT is particularly useful for deploying models on resource-constrained devices, ensuring efficient inference and reduced latency.
 
 ### Supported Features of MCT
 
